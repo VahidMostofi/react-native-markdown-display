@@ -4,7 +4,7 @@ import {
   View,
   Platform,
   StyleSheet,
-  TextRN,
+  Text as TextRN,
 } from 'react-native';
 import FitImage from 'react-native-fit-image';
 import {default as TextS} from 'react-native-styled-text';
@@ -20,11 +20,15 @@ const Text = ({key, style, children}) => {
   );
 
   if (
-    typeof children !== 'string' &&
-    !children !== undefined &&
-    children !== null
+    typeof children !== 'string' ||
+    children === undefined ||
+    children === null
   ) {
-    return undefined;
+    return (
+      <TextRN key={key} style={style}>
+        {children}
+      </TextRN>
+    );
   }
 
   return (
