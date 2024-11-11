@@ -24,11 +24,7 @@ const Text = ({key, style, children}) => {
     !children !== undefined &&
     children !== null
   ) {
-    return (
-      <TextRN key={key} style={style}>
-        {children}
-      </TextRN>
-    );
+    return undefined;
   }
 
   return (
