@@ -6,7 +6,7 @@ import {
   StyleSheet,
 } from 'react-native';
 import FitImage from 'react-native-fit-image';
-import {StyledText as Text} from 'react-native-styled-text';
+import {default as Text} from 'react-native-styled-text';
 
 import openUrl from './util/openUrl';
 import hasParents from './util/hasParents';
