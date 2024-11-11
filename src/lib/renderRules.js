@@ -4,14 +4,39 @@ import {
   View,
   Platform,
   StyleSheet,
+  TextRN,
 } from 'react-native';
 import FitImage from 'react-native-fit-image';
-import {default as Text} from 'react-native-styled-text';
+import {default as TextS} from 'react-native-styled-text';
 
 import openUrl from './util/openUrl';
 import hasParents from './util/hasParents';
 
 import textStyleProps from './data/textStyleProps';
+
+const Text = ({key, style, children}) => {
+  const hasStyledText = React.Children.toArray(children).some(
+    (child) => typeof child === 'object' && child.type === TextS,
+  );
+
+  if (
+    typeof children !== 'string' &&
+    !children !== undefined &&
+    children !== null
+  ) {
+    return (
+      <TextRN key={key} style={style}>
+        {children}
+      </TextRN>
+    );
+  }
+
+  return (
+    <TextS key={key} style={style}>
+      {children}
+    </TextS>
+  );
+};
 
 const renderRules = {
   // when unknown elements are introduced, so it wont break
