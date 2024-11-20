@@ -14,11 +14,7 @@ import hasParents from './util/hasParents';
 
 import textStyleProps from './data/textStyleProps';
 
-const Text = ({key, style, children}) => {
-  const hasStyledText = React.Children.toArray(children).some(
-    (child) => typeof child === 'object' && child.type === TextS,
-  );
-
+const Text = ({key, style, children, textStyle}) => {
   if (
     typeof children !== 'string' ||
     children === undefined ||
@@ -32,7 +28,7 @@ const Text = ({key, style, children}) => {
   }
 
   return (
-    <TextS key={key} style={style}>
+    <TextS key={key} style={style} textStyles={textStyle}>
       {children}
     </TextS>
   );
@@ -87,18 +83,18 @@ const renderRules = {
   ),
 
   // Emphasis
-  strong: (node, children, parent, styles) => (
-    <Text key={node.key} style={styles.strong}>
+  strong: (node, children, parent, styles textStyle) => (
+    <Text key={node.key} style={styles.strong} textStyle={textStyle}>
       {children}
     </Text>
   ),
-  em: (node, children, parent, styles) => (
-    <Text key={node.key} style={styles.em}>
+  em: (node, children, parent, styles textStyle) => (
+    <Text key={node.key} style={styles.em} textStyle={textStyle}>
       {children}
     </Text>
   ),
-  s: (node, children, parent, styles) => (
-    <Text key={node.key} style={styles.s}>
+  s: (node, children, parent, styles textStyle) => (
+    <Text key={node.key} style={styles.s} textStyle={textStyle}>
       {children}
     </Text>
   ),
