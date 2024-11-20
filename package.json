@@ -33,7 +33,7 @@
     "markdown-it": "^14.1.0",
     "prop-types": "^15.8.1",
     "react-native-fit-image": "^1.5.5",
-    "react-native-styled-text": "^2.0.0"
+    "react-native-styled-text": "github:VahidMostofi/react-native-styled-text"
   },
   "peerDependencies": {
     "react": ">=16.2.0",
