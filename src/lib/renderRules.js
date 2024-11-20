@@ -83,17 +83,17 @@ const renderRules = {
   ),
 
   // Emphasis
-  strong: (node, children, parent, styles textStyle) => (
+  strong: (node, children, parent, styles, textStyle) => (
     <Text key={node.key} style={styles.strong} textStyle={textStyle}>
       {children}
     </Text>
   ),
-  em: (node, children, parent, styles textStyle) => (
+  em: (node, children, parent, styles, textStyle) => (
     <Text key={node.key} style={styles.em} textStyle={textStyle}>
       {children}
     </Text>
   ),
-  s: (node, children, parent, styles textStyle) => (
+  s: (node, children, parent, styles, textStyle) => (
     <Text key={node.key} style={styles.s} textStyle={textStyle}>
       {children}
     </Text>
